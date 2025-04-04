@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roshan - Creative Web & UI/UX Designer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #ff7a29;
+            --text-color: #fff;
+            --bg-color: #121212;
+            --card-bg-light: #333;
+            --card-web-design: #8fe3cf;
+            --card-app-design: #ffc266;
+            --card-frontend: #ffb8a8;
+            --card-figma: #a2c4ff;
+            --card-website: #d7bbff;
+            --card-ui-ux: #c6e0a8;
+        }
+
+        .light-mode {
+            --text-color: #121212;
+            --bg-color: #f9f9f9;
+            --card-bg-light: #eaeaea;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+            overflow-x: hidden;
+        }
+
+        /* Header & Navigation */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 6%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: var(--bg-color);
+            transition: background-color 0.3s ease;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover, nav ul li a.active {
+            color: var(--primary-color);
+        }
+
+        .cta-button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #e66b1c;
+        }
+
+        .mode-toggle {
+            cursor: pointer;
+            margin-left: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            min-height: 100vh;
+            padding: 8rem 6%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            width: 50%;
+            z-index: 10;
+        }
+
+        .hero-greeting {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-title {
+            font-size: 4.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .btn-outline {
+            padding: 0.7rem 1.5rem;
+            background: transparent;
+            border: 2px solid var(--text-color);
+            color: var(--text-color);
+            border-radius: 2rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--text-color);
+            color: var(--bg-color);
+        }
+
+        .hero-image {
+            position: absolute;
+            right: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 45%;
+            z-index: 1;
+        }
+
+        /* About Section */
+        .about {
+            padding: 6rem 6%;
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .about-image {
+            width: 30%;
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .about-image .bg-shape {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .about-image .mint-shape {
+            background-color: var(--card-web-design);
+            top: -20px;
+            left: -20px;
+            width: 80%;
+            height: 80%;
+            border-radius: 10px;
+        }
+
+        .about-image .orange-shape {
+            background-color: var(--card-app-design);
+            bottom: -20px;
+            right: -20px;
+            width: 50%;
+            height: 50%;
+            border-radius: 10px;
+        }
+
+        .about-content {
+            width: 60%;
+        }
+
+        .about-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-desc {
+            color: #aaa;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #333;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 6rem 6%;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            padding: 1.5rem;
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-icon {
+            background-color: white;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon i {
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .service-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-desc {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .web-design {
+            background-color: var(--card-web-design);
+            color: #333;
+        }
+
+        .app-design {
+            background-color: var(--card-app-design);
+            color: #333;
+        }
+
+        .frontend {
+            background-color: var(--card-frontend);
+            color: #333;
+        }
+
+        .figma-design {
+            background-color: var(--card-figma);
+            color: #333;
+        }
+
+        .website-design {
+            background-color: var(--card-website);
+            color: #333;
+        }
+
+        .ui-ux {
+            background-color: var(--card-ui-ux);
+            color: #333;
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            padding: 6rem 6%;
+            background-color: #2c2c2c;
+        }
+
+        .portfolio-grid {
+            display: flex;
+            justify-content: space-between;
+            gap: 1.5rem;
+            overflow-x: auto;
+            padding-bottom: 1rem;
+        }
+
+        .portfolio-item {
+            min-width: 300px;
+            background-color: #424242;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .portfolio-image {
+            width: 100%;
+            height: 180px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portfolio-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .portfolio-category {
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0 0 12px 0;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 6rem 6%;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .contact-form {
+            background-color: #333;
+            padding: 2rem;
+            border-radius: 12px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: none;
+            border-radius: 6px;
+            background-color: #444;
+            color: white;
+        }
+
+        textarea.form-control {
+            resize: none;
+            height: 120px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-image {
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-image img {
+            width: 100%;
+            height: auto;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .info-icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+        }
+
+        .phone-icon { background-color: var(--card-app-design); }
+        .email-icon { background-color: var(--card-frontend); }
+        .address-icon { background-color: var(--card-figma); }
+
+        .info-content h4 {
+            font-size: 1rem;
+            color: #aaa;
+            margin-bottom: 0.2rem;
+        }
+
+        .info-content p {
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            padding: 2rem 6%;
+            text-align: center;
+            border-top: 1px solid #444;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: #333;
+            color: white;
+            transition: transform 0.3s ease;
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+        }
+
+        .footer-text {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 0.8rem;
+            margin: 0 0.5rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            .hero-title {
+                font-size: 3.5rem;
+            }
+            
+            .hero-image {
+                width: 40%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem 4%;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            nav {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--bg-color);
+                padding: 1rem 0;
+                border-top: 1px solid #444;
+                border-bottom: 1px solid #444;
+                transform: scaleY(0);
+                transform-origin: top;
+                transition: transform 0.3s ease;
+            }
+            
+            nav.active {
+                transform: scaleY(1);
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 0.8rem 0;
+            }
+            
+            .hero {
+                flex-direction: column;
+                padding: 6rem 4%;
+                text-align: center;
+            }
+            
+            .hero-content {
+                width: 100%;
+                margin-bottom: 3rem;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .hero-image {
+                position: relative;
+                width: 80%;
+                top: 0;
+                right: 0;
+                transform: none;
+            }
+            
+            .about {
+                flex-direction: column;
+                padding: 4rem 4%;
+                gap: 2rem;
+            }
+            
+            .about-image {
+                width: 70%;
+            }
+            
+            .about-content {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .social-icons {
+                justify-content: center;
+            }
+            
+            .services, .portfolio, .contact {
+                padding: 4rem 4%;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            
+            .about-image {
+                width: 90%;
+            }
+            
+            .service-card {
+                padding: 1rem;
+            }
+            
+            .portfolio-grid {
+                flex-direction: column;
+            }
+            
+            .portfolio-item {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="logo">ROSHAN</div>
+        <nav id="navbar">
+            <ul>
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Service</a></li>
+                <li><a href="#portfolio">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div style="display: flex; align-items: center;">
+            <button class="cta-button">Get Started</button>
+            <div class="mode-toggle" id="mode-toggle">
+                <i class="fa-solid fa-moon"></i>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h3 class="hero-greeting">Hello, I'm Roshan,</h3>
+            <h1 class="hero-title">Creative Web & UI/UX Designer.</h1>
+            <div class="hero-buttons">
+                <button class="btn-outline">Let's Talk <i class="fa-solid fa-arrow-right"></i></button>
+                <button class="cta-button">Download CV</button>
+            </div>
+        </div>
+        <img src="/api/placeholder/500/600" alt="Creative Design Illustration" class="hero-image">
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-image">
+            <div class="bg-shape mint-shape"></div>
+            <img src="/api/placeholder/400/400" alt="Designer Profile">
+            <div class="bg-shape orange-shape"></div>
+            <div class="social-icons">
+                <div class="social-icon">
+                    <img src="/api/placeholder/24/24" alt="Email Icon">
+                </div>
+                <div class="social-icon">
+                    <img src="/api/placeholder/24/24" alt="Slack Icon">
+                </div>
+                <div class="social-icon">
+                    <img src="/api/placeholder/24/24" alt="Telegram Icon">
+                </div>
+            </div>
+        </div>
+        <div class="about-content">
+            <h2 class="about-title">I'm a UI & UX Designer And Front-end Designer with over 1-years of experience.</h2>
+            <p class="about-desc">I'm a UI & UX Designer And Front-end Designer with over 1 years of experience. I'm from HARYANA. I code and create web elements for amazing people around the world. I like work with new people. New people new Experiences.</p>
+            <div class="hero-buttons">
+                <button class="btn-outline">Contact Me</button>
+                <button class="cta-button">Portfolio</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <h2 class="section-title">MY SERVICES</h2>
+        <div class="services-grid">
+            <div class="service-card web-design">
+                <div class="service-icon">
+                    <i class="fa-solid fa-laptop"></i>
+                </div>
+                <h3 class="service-title">Web Design</h3>
+                <p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div class="service-card app-design">
+                <div class="service-icon">
+                    <i class="fa-solid fa-mobile-screen"></i>
+                </div>
+                <h3 class="service-title">App Design</h3>
+                <p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div class="service-card frontend">
+                <div class="service-icon">
+                    <i class="fa-solid fa-desktop"></i>
+                </div>
+                <h3 class="service-title">Front-End Design</h3>
+                <p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div class="service-card figma-design">
+                <div class="service-icon">
+                    <i class="fa-solid fa-tablet"></i>
+                </div>
+                <h3 class="service-title">Figma Design</h3>
+                <p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div class="service-card website-design">
+                <div class="service-icon">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+                <h3 class="service-title">Website Design</h3>
+                <p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div class="service-card ui-ux">
+                <div class="service-icon">
+                    <i class="fa-solid fa-globe"></i>
+                </div>
+                <h3 class="service-title">UI & UX Design</h3>
+                <p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <h2 class="section-title">My Recent Work</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <div class="portfolio-image">
+                    <img src="/api/placeholder/300/180" alt="Web Design Project">
+                    <div class="portfolio-category">Web Designs</div>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-image">
+                    <img src="/api/placeholder/300/180" alt="UI/UX Design Project">
+                    <div class="portfolio-category">UI & UX Design</div>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-image">
+                    <img src="/api/placeholder/300/180" alt="Mockups Project">
+                    <div class="portfolio-category">Mockups</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <div class="contact-form">
+                <h3>Get in touch</h3>
+                <p>Our friendly team would love to hear from you.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Name :-">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Email :-">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Subject :-">
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" placeholder="Your Message :-"></textarea>
+                    </div>
+                    <button type="submit" class="cta-button">Send Message</button>
+                </form>
+            </div>
+            <div class="contact-info">
+                <div class="contact-image">
+                    <img src="/api/placeholder/400/250" alt="Contact Image">
+                </div>
+                <div class="info-item">
+                    <div class="info-icon phone-icon">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <div class="info-content">
+                        <h4>PHONE</h4>
+                        <p>+91 89XX-XXX11</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon email-icon">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div class="info-content">
+                        <h4>EMAIL</h4>
+                        <p>xyz123@gmail.com</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon address-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div class="info-content">
+                        <h4>ADDRESS</h4>
+                        <p>Vpo. Indachhoi, Fatehabad, Haryana, INDIA (125120)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+        </div>
+        <div class="footer-links">
+            <a href="#">Terms of Service</a> - <a href="#">Privacy Policy</a>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle Navigation Menu
+        const hamburger = document.getElementById('hamburger');
+        const navbar = document.getElementById('navbar');
+        
+        hamburger.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+        });
+
+        // Dark/Light Mode Toggle
+        const modeToggle = document.getElementById('mode-toggle');
+        const body = document.body;
+        
+        modeToggle.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+            
+            // Update icon
+            const icon = modeToggle.querySelector('i');
+            if (body.classList.contains('light-mode')) {
+                icon.className = 'fa-solid fa-sun';
+            } else {
+                icon.className = 'fa-solid fa-moon';
+            }
+        });
+
+        // Smooth Scrolling for Navigation Links
+        const navLinks = document.querySelectorAll('nav ul li a');
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // Close navigation menu on mobile
+                navbar.classList.remove('active');
+                
+                // Remove active class from all links
+                navLinks.forEach(link => link.classList.remove('active'));
+                
+                // Add active class to clicked link
+                link.classList.add('active');
+                
+                // Scroll to section
+                const sectionId = link.getAttribute('href');
+                const section = document.querySelector(sectionId);
+                
+                if (section) {
+                    const offsetTop = section.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Active link on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const scrollPosition = window.scrollY + 100;
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
