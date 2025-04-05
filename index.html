@@ -161,11 +161,12 @@
 
         .hero-image {
             position: absolute;
-            right: 5%;
+            right: 20%;
             top: 50%;
             transform: translateY(-50%);
-            width: 45%;
+            width: 20%;
             z-index: 1;
+            border-radius: 3%;
         }
 
         /* About Section */
@@ -177,12 +178,13 @@
         }
 
         .about-image {
-            width: 30%;
+            width: 20%;
             position: relative;
         }
 
         .about-image img {
             width: 100%;
+            top: -50px;
             border-radius: 10px;
             position: relative;
             z-index: 2;
@@ -200,14 +202,14 @@
             top: -20px;
             left: -20px;
             width: 80%;
-            height: 80%;
+            height: 83%;
             border-radius: 10px;
         }
 
         .about-image .orange-shape {
             background-color: var(--card-app-design);
-            bottom: -20px;
-            right: -20px;
+            bottom: 100px;
+            right: -0px;
             width: 50%;
             height: 50%;
             border-radius: 10px;
@@ -223,7 +225,7 @@
         }
 
         .about-desc {
-            color: #aaa;
+            color: var(--text-color);
             margin-bottom: 2rem;
             line-height: 1.6;
         }
@@ -235,12 +237,12 @@
         }
 
         .social-icon {
-            width: 40px;
-            height: 40px;
+            width: 30px;
+            height: 30px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: #333;
+            background-color: #262424;
             border-radius: 8px;
             transition: transform 0.3s ease;
         }
@@ -299,7 +301,7 @@
         }
 
         .service-desc {
-            color: rgba(255, 255, 255, 0.7);
+            color: rgba(0, 0, 0, 0.7);
             font-size: 0.9rem;
             line-height: 1.5;
         }
@@ -382,7 +384,341 @@
             bottom: 0;
             left: 0;
         }
+        .section-title {
+  color: white !important;
+}
+/* Keep your existing portfolio styles and add these new ones */
 
+/* Case Study Container */
+.case-study-container {
+    width: 100%;
+    margin-top: 2rem;
+    display: none; /* Hidden by default */
+}
+
+.case-study {
+    background-color: #424242;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    display: none; /* Hidden by default */
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.case-study-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.case-study-header h3 {
+    color: white;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.close-case-study {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.close-case-study:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.case-study-section {
+    margin-bottom: 1.5rem;
+}
+
+.case-study-section h4 {
+    color: #ccc;
+    margin-bottom: 0.5rem;
+}
+
+.case-study-section p {
+    color: #f0f0f0;
+    line-height: 1.6;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tech-tag {
+    background-color: #333;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: #ddd;
+}
+
+/* Make portfolio items clearly clickable */
+.portfolio-item {
+    cursor: pointer;
+    position: relative;
+}
+
+.portfolio-item:hover::after {
+    content: 'Click to view details';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-weight: bold;
+    border-radius: 12px;
+}
+
+/* Active State */
+.portfolio-item.active {
+    border: 2px solid #64ffda;
+}
+/* Case Study Images */
+.case-study-image {
+    margin: 1.5rem 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.case-study-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.image-caption {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #f0f0f0;
+    padding: 0.5rem;
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+/* For side-by-side layout on larger screens */
+@media (min-width: 768px) {
+    .case-study-section.with-side-image {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+    
+    .case-study-section.with-side-image .case-study-image {
+        width: 50%;
+        flex-shrink: 0;
+    }
+    
+    .case-study-section.with-side-image .section-text {
+        width: 50%;
+    }
+}
+/* Case Study Container - Updated for Orange/Black Theme */
+.case-study-container {
+    width: 100%;
+    margin-top: 2rem;
+    display: none; /* Hidden by default */
+}
+
+.case-study {
+    background-color: #202020; /* Darker background */
+    border-radius: 12px;
+    padding: 2rem;
+    margin-top: 1.5rem;
+    display: none; /* Hidden by default */
+    animation: fadeIn 0.5s ease;
+    border-left: 4px solid #ff7a29; /* Orange accent border */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.case-study-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #333;
+    padding-bottom: 1rem;
+}
+
+.case-study-header h3 {
+    color:#ff7a29; /* Orange header text */
+    font-size: 1.8rem;
+    margin: 0;
+    font-weight: 600;
+}
+
+.close-case-study {
+    background-color: rgba(255, 107, 0, 0.2); /* Semi-transparent orange */
+    border: none;
+    color: #ff7a29;
+    font-size: 1.5rem;
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.close-case-study:hover {
+    background-color: rgba(255, 107, 0, 0.4);
+    transform: rotate(90deg);
+}
+
+.case-study-section {
+    margin-bottom: 2rem;
+    position: relative;
+    padding-left: 1rem;
+}
+
+/* Orange dot bullets for sections */
+.case-study-section::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    width: 8px;
+    height: 8px;
+    background-color:#ff7a29;
+    border-radius: 50%;
+}
+
+.case-study-section h4 {
+    color:#ff7a29; /* Orange subheader text */
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.case-study-section p {
+    color: #e0e0e0; /* Light text for better readability */
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+/* Tech Stack Tags */
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    margin-top: 1rem;
+}
+
+.tech-tag {
+    background-color: rgba(255, 107, 0, 0.15); /* Very subtle orange */
+    border: 1px solid rgba(255, 107, 0, 0.5); /* Orange border */
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color:#ff7a29; /* Orange text */
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.tech-tag:hover {
+    background-color: rgba(255, 107, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Case Study Images - Enhanced */
+.case-study-image {
+    margin: 1.5rem 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    border: 1px solid #333;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.case-study-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.case-study-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.image-caption {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.8);
+    color:#ff7a29;
+    padding: 0.7rem;
+    font-size: 0.9rem;
+    text-align: center;
+    border-top: 1px solid #333;
+}
+
+/* Active Portfolio Item */
+.portfolio-item.active {
+    border: 2px solid #ff7a29;
+    box-shadow: 0 0 15px rgba(255, 107, 0, 0.5);
+}
+
+/* Hover Effect */
+.portfolio-item:hover::after {
+    content: 'View Project Details';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.75);
+    color:#ff7a29;
+    font-weight: bold;
+    border-radius: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Animation for content entrance */
+@keyframes fadeIn {
+    from { 
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Make sections animate in staggered fashion */
+.case-study-section:nth-child(1) { animation: fadeIn 0.3s ease 0.1s both; }
+.case-study-section:nth-child(2) { animation: fadeIn 0.3s ease 0.2s both; }
+.case-study-section:nth-child(3) { animation: fadeIn 0.3s ease 0.3s both; }
+.case-study-section:nth-child(4) { animation: fadeIn 0.3s ease 0.4s both; }
         /* Contact Section */
         .contact {
             padding: 6rem 6%;
@@ -626,24 +962,165 @@
                 min-width: 100%;
             }
         }
-    </style>
+        .logo a {
+    color: /* your desired color */; /* Sets the text color */
+    text-decoration: none; /* Removes the underline */
+}
+
+.logo a:visited {
+    color:#ff7a29 /* your desired color */; /* Ensures visited links remain the same color */
+}
+html {
+    scroll-behavior: smooth;
+}
+/* Remove underline and style btn-outline */
+.btn-outline {
+    text-decoration: none; /* Removes the underline */
+    /* Add other styling properties as needed */
+}
+
+/* Remove underline and style cta-button */
+.cta-button {
+    text-decoration: none; /* Removes the underline */
+    /* Add other styling properties as needed */
+}
+/* Add this to your CSS */
+.logo, .logo a {
+  color:#ff7a29; /* Your orange color code */
+  text-decoration: none;
+}
+
+/* Make sure this has higher specificity than any conflicting rules */
+header .logo, 
+nav .logo, 
+#header .logo {
+  color: #ff7a29 !important; /* Use !important only if necessary */
+}
+:root {
+  /* Dark mode colors (default) */
+  --text-color: #ffffff; /* White text for dark backgrounds */
+  --bg-color: #121212;
+  /* Your other dark mode variables */
+}
+
+.light-mode {
+  /* Light mode colors */
+  --text-color: #333; /* Dark text for light backgrounds */
+  --bg-color: #ffffff;
+  /* Your other light mode variables */
+}
+.info-message {
+  margin-bottom: 2rem;
+  padding-right: 1rem;
+}
+
+.info-message h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.info-message p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #aaa; /* adjust to match your theme */
+}
+.info-message {
+  margin-bottom: 2rem;
+  padding-right: 1rem;
+  color: var(--text-color);
+}
+
+.info-message h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+.info-message p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+/* Default to Dark Mode Styles */
+
+/* Contact Section Text */
+.contact .contact-form h3,
+.contact .contact-form p {
+  transition: color 0.3s ease; /* Smooth transition for color changes */
+}
+
+/* In Dark Mode (default) */
+.contact .contact-form h3 {
+  font-size: 2rem;
+  color: #fff; /* Light color for dark mode */
+}
+
+.contact .contact-form p {
+  color: #ccc; /* Lighter text color for dark mode */
+}
+
+/* Light Mode Styles */
+.light-mode .contact .contact-form h3 {
+  color: #f9f6f6; /* Dark text for light mode */
+}
+
+.light-mode .contact .contact-form p {
+  color: #fffefe; /* Slightly darker text for light mode */
+}
+/* Footer Container */
+.footer {
+  background-color: #333; /* Background color of footer */
+  padding: 20px;
+  text-align: center; /* Center text and content */
+}
+
+.footer-content {
+  color: #fff; /* Text color in footer */
+}
+
+/* Social Icons Styling */
+.social-icons {
+  display: flex;
+  justify-content: center; /* Horizontally center the icons */
+  align-items: center; /* Vertically align icons */
+  gap: 20px; /* Space between icons */
+  margin-top: 10px; /* Add some space between text and icons */
+}
+
+/* Styling for each icon's link */
+.social-icons a {
+  color: #fff; /* Make sure the icons are white */
+  font-size: 24px; /* Set icon size */
+  text-decoration: none; /* Remove underline from links */
+  transition: color 0.3s ease; /* Smooth transition on hover */
+}
+
+.social-icons a:hover {
+  color: #00c3ff; /* Color change on hover */
+}
+
+
+  </style>
 </head>
 <body>
     <!-- Header & Navigation -->
     <header>
-        <div class="logo">ROSHAN</div>
+        <div class="logo">
+            <a href="#home">रो</a>
+        </div>
+
         <nav id="navbar">
             <ul>
                 <li><a href="#home" class="active">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Service</a></li>
                 <li><a href="#portfolio">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
         <div style="display: flex; align-items: center;">
-            <button class="cta-button">Get Started</button>
+            <a href="#contact" class="cta-button">Get Started</a>
             <div class="mode-toggle" id="mode-toggle">
                 <i class="fa-solid fa-moon"></i>
             </div>
@@ -659,37 +1136,49 @@
             <h3 class="hero-greeting">Hello, I'm Roshan,</h3>
             <h1 class="hero-title">Creative Web & UI/UX Designer.</h1>
             <div class="hero-buttons">
-                <button class="btn-outline">Let's Talk <i class="fa-solid fa-arrow-right"></i></button>
-                <button class="cta-button">Download CV</button>
+                <a href="#contact" class="btn-outline">Let's Talk <i class="fa-solid fa-arrow-right"></i></a>
+                <button class="cta-button" id="downloadCV">Download CV</button>
+                
+
             </div>
         </div>
-        <img src="/api/placeholder/500/600" alt="Creative Design Illustration" class="hero-image">
+        <img src="roshan_portfolio_images/Adobe-design-removebg-preview.png" alt="Creative Design Illustration" class="hero-image">
     </section>
 
     <!-- About Section -->
     <section class="about" id="about">
         <div class="about-image">
             <div class="bg-shape mint-shape"></div>
-            <img src="/api/placeholder/400/400" alt="Designer Profile">
+            <img src="roshan_portfolio_images/Adobe-design-removebg-preview.png" alt="Designer Profile">
             <div class="bg-shape orange-shape"></div>
-            <div class="social-icons">
-                <div class="social-icon">
-                    <img src="/api/placeholder/24/24" alt="Email Icon">
-                </div>
-                <div class="social-icon">
-                    <img src="/api/placeholder/24/24" alt="Slack Icon">
-                </div>
-                <div class="social-icon">
-                    <img src="/api/placeholder/24/24" alt="Telegram Icon">
-                </div>
+          <!-- Add this where you want your social icons to appear -->
+<div class="social-icons">
+    <a href="https://www.linkedin.com/in/roshan-ojha-469538358/" target="_blank" rel="noopener noreferrer">
+      <img src="roshan_portfolio_images/icons8-linkedin-48.png" alt="LinkedIn" class="social-icon">
+    </a>
+    <a href="https://github.com/Rossojha" target="_blank" rel="noopener noreferrer">
+      <img src="roshan_portfolio_images/icons8-github-logo-94.png" alt="GitHub" class="social-icon">
+    </a>
+    <a href="https://www.instagram.com/_rooshann/" target="_blank" rel="noopener noreferrer">
+      <img src="roshan_portfolio_images/icons8-instagram-logo-48.png" alt="Instagram" class="social-icon">
+    </a>
+    <a href="mailto:rossbusiness99@gmail.com" target="_blank">
+        <img src="roshan_portfolio_images/icons8-gmail-48.png" alt="Email Me" class="social-icon">
+    </a>
+  </div>
             </div>
         </div>
         <div class="about-content">
-            <h2 class="about-title">I'm a UI & UX Designer And Front-end Designer with over 1-years of experience.</h2>
-            <p class="about-desc">I'm a UI & UX Designer And Front-end Designer with over 1 years of experience. I'm from HARYANA. I code and create web elements for amazing people around the world. I like work with new people. New people new Experiences.</p>
+            <h2 class="about-title">👋Hey there!</h2>
+            <p class="about-desc">I'm a UI/UX designer and front-end developer who loves turning ideas into clean, creative, and user-friendly designs. I mix aesthetics with strategy—because what’s the point of a pretty button if no one clicks it, right?<br><br>
+
+                
+                I also dabble in ads optimization, with proven wins in boosting sales (yes, my designs do convert). I live for creativity, pixel-perfection, and making users go “oooh.”<br><br>
+                
+                If it involves design, code, or coffee—I’m in. Let’s build something that looks good and works hard. 🚀<br><br><br></p>
             <div class="hero-buttons">
-                <button class="btn-outline">Contact Me</button>
-                <button class="cta-button">Portfolio</button>
+                <a href="#contact"button class="btn-outline">Contact Me</button></a>
+                <a href=#portfolio class="cta-button">Portfolio</button></a>
             </div>
         </div>
     </section>
@@ -700,116 +1189,231 @@
         <div class="services-grid">
             <div class="service-card web-design">
                 <div class="service-icon">
-                    <i class="fa-solid fa-laptop"></i>
+                    <i class="fa-solid fa-arrow-right"></i>
                 </div>
-                <h3 class="service-title">Web Design</h3>
-                <p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <h3 class="service-title">UI/UX Design</h3>
+                <p class="service-desc">I create designs that speak louder than words. Sleek, intuitive, and easy-to-navigate layouts that keep users engaged and coming back for more—because user-friendly is the new cool.
+
+                </p>
             </div>
             <div class="service-card app-design">
+                <div class="service-icon">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+                <h3 class="service-title">Front-End Development</h3>
+                <p class="service-desc">From HTML to JavaScript, I bring designs to life with flawless front-end development. Whether it’s animation, interactivity, or responsiveness, I make sure your website works beautifully across all devices.</p>
+            </div>
+            <div class="service-card frontend">
                 <div class="service-icon">
                     <i class="fa-solid fa-mobile-screen"></i>
                 </div>
                 <h3 class="service-title">App Design</h3>
-                <p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
-            <div class="service-card frontend">
-                <div class="service-icon">
-                    <i class="fa-solid fa-desktop"></i>
-                </div>
-                <h3 class="service-title">Front-End Design</h3>
-                <p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p class="service-desc">
+                    I craft mobile app designs that blend beauty with functionality. From smooth interfaces to user-friendly experiences, I make sure your app stands out in the crowded app stores and keeps users engaged long after they download it.
+                    
+                    </p>
             </div>
             <div class="service-card figma-design">
                 <div class="service-icon">
-                    <i class="fa-solid fa-tablet"></i>
+                    <i class="fa-solid fa-desktop"></i>
                 </div>
-                <h3 class="service-title">Figma Design</h3>
-                <p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <h3 class="service-title">Ads Optimization
+                </h3>
+                <p class="service-desc">
+                    I take your ads and make them work smarter, not harder. With proven strategies and optimization techniques, I ensure your ads reach the right people and deliver maximum return on investment—without draining your budget.
+                </p>
             </div>
             <div class="service-card website-design">
                 <div class="service-icon">
-                    <i class="fa-solid fa-code"></i>
+                    <i class="fa-solid fa-envelope"></i>
                 </div>
-                <h3 class="service-title">Website Design</h3>
-                <p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <h3 class="service-title">Digital Marketing</h3>
+                <p class="service-desc">
+                    From content creation to campaign management, I’ll help your business stand out in the crowded digital space. I design and execute strategies that grow your brand, increase engagement, and boost sales.
+                    
+                    </p>
             </div>
             <div class="service-card ui-ux">
                 <div class="service-icon">
                     <i class="fa-solid fa-globe"></i>
                 </div>
-                <h3 class="service-title">UI & UX Design</h3>
-                <p class="service-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <h3 class="service-title">SEO Optimization</h3>
+                <p class="service-desc">
+                    A stunning website means nothing if no one can find it. I optimize your website for search engines, ensuring it ranks high on Google and attracts the right traffic—leading to more clicks, conversions, and success.
+                    
+                    </p>
             </div>
         </div>
     </section>
 
+   
     <!-- Portfolio Section -->
-    <section class="portfolio" id="portfolio">
-        <h2 class="section-title">My Recent Work</h2>
-        <div class="portfolio-grid">
-            <div class="portfolio-item">
-                <div class="portfolio-image">
-                    <img src="/api/placeholder/300/180" alt="Web Design Project">
-                    <div class="portfolio-category">Web Designs</div>
-                </div>
+<section class="portfolio" id="portfolio">
+    <h2 class="section-title">My Recent Work</h2>
+    <div class="portfolio-grid">
+        <div class="portfolio-item" data-project="web-design">
+            <div class="portfolio-image">
+                <img src="roshan_portfolio_images/Screenshot 2025-03-24 225135.png" alt="Web Design Project">
+                <div class="portfolio-category">Web Designs</div>
             </div>
-            <div class="portfolio-item">
-                <div class="portfolio-image">
-                    <img src="/api/placeholder/300/180" alt="UI/UX Design Project">
-                    <div class="portfolio-category">UI & UX Design</div>
-                </div>
+        </div>
+        <div class="portfolio-item" data-project="ui-ux">
+            <div class="portfolio-image">
+                <img src="roshan_portfolio_images/Screenshot 2025-03-23 234147.png" alt="UI/UX Design Project">
+                <div class="portfolio-category">UI & UX Design</div>
             </div>
-            <div class="portfolio-item">
-                <div class="portfolio-image">
-                    <img src="/api/placeholder/300/180" alt="Mockups Project">
-                    <div class="portfolio-category">Mockups</div>
+        </div>
+        <div class="portfolio-item" data-project="mockups">
+            <div class="portfolio-image">
+                <img src="roshan_portfolio_images/Screenshot 2025-03-23 233936.jpg" alt="Mockups Project">
+                <div class="portfolio-category">Mockups</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Expandable case study container -->
+    <div class="case-study-container">
+       <!-- Web Design Case Study -->
+<div id="web-design" class="case-study">
+    <div class="case-study-header">
+        <h3>Web Design Project</h3>
+        <button class="close-case-study">&times;</button>
+    </div>
+    <div class="case-study-content">
+        <div class="case-study-section">
+            <h4>Overview</h4>
+            <p>A complete overhaul of an outdated website, focusing on improving user experience and modernizing the visual design.</p>
+            <!-- Added image -->
+            <div class="case-study-image">
+                <img src="roshan_portfolio_images/web-design-overview.jpg" alt="Web Design Overview">
+                <span class="image-caption">Initial website mockup</span>
+            </div>
+        </div>
+        <div class="case-study-section">
+            <h4>Challenge</h4>
+            <p>The client's existing website had poor navigation and wasn't mobile-responsive, resulting in high bounce rates.</p>
+            <!-- Added image -->
+            <div class="case-study-image">
+                <img src="roshan_portfolio_images/web-design-challenge.jpg" alt="Website Challenges">
+                <span class="image-caption">Problems identified in the original design</span>
+            </div>
+        </div>
+        <div class="case-study-section">
+            <h4>Solution</h4>
+            <p>Implemented a clean, modern design with intuitive navigation and responsive design optimized for all devices.</p>
+            <!-- Added image -->
+            <div class="case-study-image">
+                <img src="roshan_portfolio_images/web-design-solution.jpg" alt="Solution Implementation">
+                <span class="image-caption">Final responsive design</span>
+            </div>
+        </div>
+        <div class="case-study-section">
+            <h4>Technologies Used</h4>
+            <div class="tech-stack">
+                <span class="tech-tag">HTML/CSS</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Figma</span>
+            </div>
+        </div>
+    </div>
+</div>
+        
+        <!-- UI/UX Case Study -->
+        <div id="ui-ux" class="case-study">
+            <div class="case-study-header">
+                <h3>UI/UX Design Project</h3>
+                <button class="close-case-study">&times;</button>
+            </div>
+            <div class="case-study-content">
+                <div class="case-study-section">
+                    <h4>Overview</h4>
+                    <p>Designed a user-friendly mobile application that simplifies the user experience.</p>
+                </div>
+                <div class="case-study-section">
+                    <h4>Challenge</h4>
+                    <p>The client needed to compete with modern applications while addressing usability concerns.</p>
+                </div>
+                <div class="case-study-section">
+                    <h4>Process</h4>
+                    <p>Conducted user research, created wireframes, and developed interactive prototypes.</p>
+                </div>
+                <div class="case-study-section">
+                    <h4>Results</h4>
+                    <p>The redesign improved user engagement by 45% and received positive feedback in usability tests.</p>
                 </div>
             </div>
         </div>
-    </section>
+        
+        <!-- Mockups Case Study -->
+        <div id="mockups" class="case-study">
+            <div class="case-study-header">
+                <h3>Product Mockups</h3>
+                <button class="close-case-study">&times;</button>
+            </div>
+            <div class="case-study-content">
+                <div class="case-study-section">
+                    <h4>Overview</h4>
+                    <p>Created realistic product mockups for a client's marketing campaign.</p>
+                </div>
+                <div class="case-study-section">
+                    <h4>Approach</h4>
+                    <p>Used advanced 3D modeling and rendering techniques to showcase the product from multiple angles.</p>
+                </div>
+                <div class="case-study-section">
+                    <h4>Impact</h4>
+                    <p>The mockups helped increase pre-order sales by 35% and were featured in digital marketing campaigns.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="contact-container">
             <div class="contact-form">
                 <h3>Get in touch</h3>
-                <p>Our friendly team would love to hear from you.</p>
-                <form>
+                <p>Would love to hear from you.</p><br>
+                <form id="contact-form" action="https://formspree.io/f/xqapywpo" method="POST">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Name :-">
+                      <input type="text" name="name" class="form-control" placeholder="Name :-" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" class="form-control" placeholder="Email :-">
+                      <input type="email" name="email" class="form-control" placeholder="Email :-" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Subject :-">
+                      <input type="text" name="subject" class="form-control" placeholder="Subject :-">
                     </div>
                     <div class="form-group">
-                        <textarea class="form-control" placeholder="Your Message :-"></textarea>
+                      <textarea name="message" class="form-control" placeholder="Your Message :-" required></textarea>
                     </div>
                     <button type="submit" class="cta-button">Send Message</button>
-                </form>
+                    <p id="status-message"></p>
+                  </form>
+                  
             </div>
             <div class="contact-info">
-                <div class="contact-image">
-                    <img src="/api/placeholder/400/250" alt="Contact Image">
-                </div>
-                <div class="info-item">
-                    <div class="info-icon phone-icon">
-                        <i class="fa-solid fa-phone"></i>
-                    </div>
-                    <div class="info-content">
-                        <h4>PHONE</h4>
-                        <p>+91 89XX-XXX11</p>
-                    </div>
-                </div>
+                <div class="info-message"><br><br><br>
+                    <h3>Let’s create something amazing together.</h3>
+                    <p>
+                      Have an idea in mind?<br>
+                      Whether you need a fresh UI, optimized ads, or just someone to nerd out on pixels and conversions — I’m here for it.<br>
+                      Let’s bring your vision to life. Drop me a message, and let’s chat!
+                    </p>
+                  </div>
+                  
+                 
+                  
+                  
+                  
+                
                 <div class="info-item">
                     <div class="info-icon email-icon">
                         <i class="fa-solid fa-envelope"></i>
                     </div>
                     <div class="info-content">
                         <h4>EMAIL</h4>
-                        <p>xyz123@gmail.com</p>
+                        <p>rossbusiness99@gmail.com</p>
                     </div>
                 </div>
                 <div class="info-item">
@@ -818,26 +1422,32 @@
                     </div>
                     <div class="info-content">
                         <h4>ADDRESS</h4>
-                        <p>Vpo. Indachhoi, Fatehabad, Haryana, INDIA (125120)</p>
+                        <p>Kathmandu,Nepal</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="social-links">
-            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
-        </div>
-        <div class="footer-links">
-            <a href="#">Terms of Service</a> - <a href="#">Privacy Policy</a>
-        </div>
-    </footer>
+<!-- Footer Section -->
+<footer class="footer">
+    <div class="footer-content">
+      <p>Follow me on</p>
+      <div class="social-icons">
+        <a href="mailto:rossbusiness99@gmail.com" target="_blank">
+            <i class="fab fa-envelope"></i>
+        </a>
+       
+        <a href="https://linkedin.com/in/roshan-ojha-469538358/" target="_blank">
+          <i class="fab fa-linkedin-in"></i> <!-- LinkedIn icon -->
+        </a>
+        <a href="https://instagram.com/_rooshann" target="_blank">
+          <i class="fab fa-instagram"></i> <!-- Instagram icon -->
+        </a>
+      </div>
+    </div>
+  </footer>
+  
 
     <script>
         // Toggle Navigation Menu
@@ -915,5 +1525,99 @@
             });
         });
     </script>
-</body>
+    <script>
+        document.querySelectorAll('a[href^=\"#\"]').forEach(anchor => {
+          anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+              behavior: 'smooth'
+            });
+          });
+        });
+      </script>
+      
+
+<script>
+    document.getElementById('downloadCV').addEventListener('click', function() {
+      window.open('chrome-extension://oemmndcbldboiebfnladdacbdfmadadm/file:///C:/Users/USER/Desktop/new%20portfolio%20refined/Refined-Portfolio/Roshan%27s%20CV.pdf', '_blank');
+    });
+  </script>
+<script>
+    const form = document.getElementById('contact-form');
+    const status = document.getElementById('status-message');
+  
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault(); // Prevent page reload
+      const formData = new FormData(form);
+  
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+  
+        if (response.ok) {
+          status.textContent = "Thanks for reaching out! I'll get back to you soon. 🙌";
+          form.reset();
+        } else {
+          status.textContent = "Hmm... something went wrong. Try again?";
+        }
+      } catch (error) {
+        status.textContent = "Network issue. Please try again later!";
+      }
+    });
+  </script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get all portfolio items
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+        const caseStudyContainer = document.querySelector('.case-study-container');
+        const caseStudies = document.querySelectorAll('.case-study');
+        const closeButtons = document.querySelectorAll('.close-case-study');
+        
+        // Add click event to portfolio items
+        portfolioItems.forEach(item => {
+            item.addEventListener('click', function() {
+                // Remove active class from all items
+                portfolioItems.forEach(i => i.classList.remove('active'));
+                
+                // Add active class to clicked item
+                this.classList.add('active');
+                
+                // Get project ID
+                const projectId = this.getAttribute('data-project');
+                
+                // Hide all case studies
+                caseStudies.forEach(study => {
+                    study.style.display = 'none';
+                });
+                
+                // Show case study container
+                caseStudyContainer.style.display = 'block';
+                
+                // Show selected case study
+                document.getElementById(projectId).style.display = 'block';
+                
+                // Scroll to case study container
+                caseStudyContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+        
+        // Add click event to close buttons
+        closeButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.stopPropagation();
+                caseStudyContainer.style.display = 'none';
+                
+                // Remove active class from all items
+                portfolioItems.forEach(i => i.classList.remove('active'));
+            });
+        });
+    });
+</script>
+  </body>
 </html>
