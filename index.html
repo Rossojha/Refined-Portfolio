@@ -364,15 +364,15 @@
 
         .portfolio-image {
             width: 100%;
-            height: 180px;
+            height: auto;
             position: relative;
             overflow: hidden;
         }
 
         .portfolio-image img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: auto;
+            object-fit: contain;
         }
 
         .portfolio-category {
@@ -1156,9 +1156,7 @@ nav .logo,
     <a href="https://www.linkedin.com/in/roshan-ojha-469538358/" target="_blank" rel="noopener noreferrer">
       <img src="roshan_portfolio_images/icons8-linkedin-48.png" alt="LinkedIn" class="social-icon">
     </a>
-    <a href="https://github.com/Rossojha" target="_blank" rel="noopener noreferrer">
-      <img src="roshan_portfolio_images/icons8-github-logo-94.png" alt="GitHub" class="social-icon">
-    </a>
+    
     <a href="https://www.instagram.com/_rooshann/" target="_blank" rel="noopener noreferrer">
       <img src="roshan_portfolio_images/icons8-instagram-logo-48.png" alt="Instagram" class="social-icon">
     </a>
@@ -1253,14 +1251,20 @@ nav .logo,
     <div class="portfolio-grid">
         <div class="portfolio-item" data-project="web-design">
             <div class="portfolio-image">
-                <img src="roshan_portfolio_images/Screenshot 2025-03-24 225135.png" alt="Web Design Project">
-                <div class="portfolio-category">Web Designs</div>
+                <img src="roshan_portfolio_images/Untitled design (1).jpg" alt="Web Design Project">
+                <div class="portfolio-category">Vibely – Event Finder App Design</div>
             </div>
         </div>
         <div class="portfolio-item" data-project="ui-ux">
             <div class="portfolio-image">
-                <img src="roshan_portfolio_images/Screenshot 2025-03-23 234147.png" alt="UI/UX Design Project">
-                <div class="portfolio-category">UI & UX Design</div>
+                <img src="roshan_portfolio_images/nzcoWtMnGUM (1).png" alt="UI/UX Design Project">
+                <div class="portfolio-category">Elite Wears - Ecommerce Website Design</div>
+            </div>
+        </div>
+        <div class="portfolio-item" data-project="mockups">
+            <div class="portfolio-image">
+                <img src="roshan_portfolio_images/Screenshot 2025-03-23 233936.jpg" alt="Mockups Project">
+                <div class="portfolio-category">Mockups</div>
             </div>
         </div>
         <div class="portfolio-item" data-project="mockups">
@@ -1276,42 +1280,85 @@ nav .logo,
        <!-- Web Design Case Study -->
 <div id="web-design" class="case-study">
     <div class="case-study-header">
-        <h3>Web Design Project</h3>
+        <h3>Vibely – Event Finder App</h3>
         <button class="close-case-study">&times;</button>
     </div>
     <div class="case-study-content">
         <div class="case-study-section">
-            <h4>Overview</h4>
-            <p>A complete overhaul of an outdated website, focusing on improving user experience and modernizing the visual design.</p>
+            <h4>Project Overview</h4>
+            <p>Vibely is a mobile app concept that helps users effortlessly discover events happening around them—tailored to their vibe and interests. From concerts and workshops to casual meetups and creative gatherings, Vibely connects users to moments that matter nearby.
+
+            </p>
             <!-- Added image -->
             <div class="case-study-image">
-                <img src="roshan_portfolio_images/web-design-overview.jpg" alt="Web Design Overview">
-                <span class="image-caption">Initial website mockup</span>
+                <img src="roshan_portfolio_images/Untitled design (1).jpg" alt="Web Design Overview">
+                <span class="image-caption">Home Screen</span>
             </div>
         </div>
         <div class="case-study-section">
-            <h4>Challenge</h4>
-            <p>The client's existing website had poor navigation and wasn't mobile-responsive, resulting in high bounce rates.</p>
+            <h4>🔍 The Problem</h4>
+            <p>Despite a growing number of local events, many users struggle to find experiences that match their interests. Social media platforms feel overwhelming or unreliable for event discovery, and there’s no quick way to filter events based on mood, type, or proximity.</p>
+           
+        </div>
+        <div class="case-study-section">
+            <h4>💡 The Solution</h4>
+            <p>Vibely simplifies event discovery through a clean, engaging interface that filters events by location, category, and vibe (like Chill, Energetic, Artsy, Professional) and allows users to save, share, and get reminders for events as well as integrates real-time maps for easy navigation to event locations</p>
             <!-- Added image -->
             <div class="case-study-image">
-                <img src="roshan_portfolio_images/web-design-challenge.jpg" alt="Website Challenges">
-                <span class="image-caption">Problems identified in the original design</span>
+                <img src="roshan_portfolio_images/Untitled design (2).jpg" alt="Solution Implementation">
+                <span class="image-caption">Event Details Screen</span>
             </div>
         </div>
         <div class="case-study-section">
-            <h4>Solution</h4>
-            <p>Implemented a clean, modern design with intuitive navigation and responsive design optimized for all devices.</p>
+            <h4>🧪 Research & Insights</h4>
+            <p>Through surveys and user interviews, I found that most people want quick access to events without digging through Facebook or random flyers. Users preferred a mobile app with visual previews and the ability to save or share events instantly.
+
+            </p>
             <!-- Added image -->
             <div class="case-study-image">
-                <img src="roshan_portfolio_images/web-design-solution.jpg" alt="Solution Implementation">
-                <span class="image-caption">Final responsive design</span>
+                <img src="roshan_portfolio_images/Untitled design (4).jpg" alt="Solution Implementation">
+                <span class="image-caption">Get Ticket</span>
             </div>
         </div>
         <div class="case-study-section">
-            <h4>Technologies Used</h4>
+            <h4>💳 Payment Methods
+            </h4>
+            <p>To make ticket purchases easy and locally accessible, Vibely integrates popular Nepali payment options like eSewa, Khalti, and IME Pay. These gateways allow users to instantly book paid events using mobile wallets they already trust and use daily. The checkout flow is kept minimal and smooth to ensure a fast and secure payment experience.
+
+            </p>
+            <!-- Added image -->
+            <div class="case-study-image">
+                <img src="roshan_portfolio_images/Untitled design (5).jpg" alt="Solution Implementation">
+                <span class="image-caption">Payment Method</span>
+            </div>
+        </div>
+        <div class="case-study-section">
+            <h4>🎟️ Digital Tickets & QR Code Entry
+
+            </h4>
+            <p>After a successful payment, Vibely generates a digital ticket with a unique QR code that users can access anytime from their profile or event page. This QR code can be scanned at the event entrance for quick and contactless check-in. It not only speeds up entry but also reduces the need for physical tickets, making the process eco-friendly and efficient.
+
+            </p>
+            <!-- Added image -->
+            <div class="case-study-image">
+                <img src="roshan_portfolio_images/Untitled design (3).jpg" alt="Solution Implementation">
+                <span class="image-caption">Payment Method</span>
+            </div>
+        </div>
+        <div class="case-study-section">
+            <h4>🚀 Outcome
+
+
+            </h4>
+            <p>Testers loved the simplicity and customization. The vibe filters made the experience fun and more personal. It received positive feedback for both functionality and design clarity.
+
+            </p>
+            
+        </div>
+        <div class="case-study-section">
+            <h4>Tools Used</h4>
             <div class="tech-stack">
-                <span class="tech-tag">HTML/CSS</span>
-                <span class="tech-tag">JavaScript</span>
+                
                 <span class="tech-tag">Figma</span>
             </div>
         </div>
@@ -1572,52 +1619,118 @@ nav .logo,
   </script>
   
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Get all portfolio items
-        const portfolioItems = document.querySelectorAll('.portfolio-item');
-        const caseStudyContainer = document.querySelector('.case-study-container');
-        const caseStudies = document.querySelectorAll('.case-study');
-        const closeButtons = document.querySelectorAll('.close-case-study');
-        
-        // Add click event to portfolio items
-        portfolioItems.forEach(item => {
-            item.addEventListener('click', function() {
-                // Remove active class from all items
-                portfolioItems.forEach(i => i.classList.remove('active'));
-                
-                // Add active class to clicked item
-                this.classList.add('active');
-                
-                // Get project ID
-                const projectId = this.getAttribute('data-project');
-                
-                // Hide all case studies
-                caseStudies.forEach(study => {
-                    study.style.display = 'none';
-                });
-                
-                // Show case study container
-                caseStudyContainer.style.display = 'block';
-                
-                // Show selected case study
-                document.getElementById(projectId).style.display = 'block';
-                
-                // Scroll to case study container
-                caseStudyContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // Add this to the existing script at the bottom of your HTML file
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all portfolio items
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+    const caseStudyContainer = document.querySelector('.case-study-container');
+    const caseStudies = document.querySelectorAll('.case-study');
+    const closeButtons = document.querySelectorAll('.close-case-study');
+    
+    // Add click event to portfolio items
+    portfolioItems.forEach((item, index) => {
+        item.addEventListener('click', function() {
+            // Check if it's the first portfolio item
+            if (index === 0) {
+                // Open Behance case study in a new tab
+                window.open('https://www.behance.net/gallery/224290459/Event-App-UIUX-Vibely', '_blank');
+                return; // Don't execute the rest of the function
+            }
+            
+            // For other portfolio items, use the original functionality
+            // Remove active class from all items
+            portfolioItems.forEach(i => i.classList.remove('active'));
+            
+            // Add active class to clicked item
+            this.classList.add('active');
+            
+            // Get project ID
+            const projectId = this.getAttribute('data-project');
+            
+            // Hide all case studies
+            caseStudies.forEach(study => {
+                study.style.display = 'none';
             });
-        });
-        
-        // Add click event to close buttons
-        closeButtons.forEach(button => {
-            button.addEventListener('click', function(e) {
-                e.stopPropagation();
-                caseStudyContainer.style.display = 'none';
-                
-                // Remove active class from all items
-                portfolioItems.forEach(i => i.classList.remove('active'));
-            });
+            
+            // Show case study container
+            caseStudyContainer.style.display = 'block';
+            
+            // Show selected case study
+            document.getElementById(projectId).style.display = 'block';
+            
+            // Scroll to case study container
+            caseStudyContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
     });
+    
+    // Add click event to close buttons
+    closeButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.stopPropagation();
+            caseStudyContainer.style.display = 'none';
+            
+            // Remove active class from all items
+            portfolioItems.forEach(i => i.classList.remove('active'));
+        });
+    });
+});
+</script>
+<script>
+    // Add this to the existing script at the bottom of your HTML file
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all portfolio items
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+    const caseStudyContainer = document.querySelector('.case-study-container');
+    const caseStudies = document.querySelectorAll('.case-study');
+    const closeButtons = document.querySelectorAll('.close-case-study');
+    
+    // Add click event to portfolio items
+    portfolioItems.forEach((item, index) => {
+        item.addEventListener('click', function() {
+            // Check if it's the second portfolio item
+            if (index === 1) {
+                // Open Behance case study in a new tab
+                window.open('https://www.behance.net/gallery/224686459/E-commerce-website-Design-Elite-Wears', '_blank');
+                return; // Don't execute the rest of the function
+            }
+            
+            // For other portfolio items, use the original functionality
+            // Remove active class from all items
+            portfolioItems.forEach(i => i.classList.remove('active'));
+            
+            // Add active class to clicked item
+            this.classList.add('active');
+            
+            // Get project ID
+            const projectId = this.getAttribute('data-project');
+            
+            // Hide all case studies
+            caseStudies.forEach(study => {
+                study.style.display = 'none';
+            });
+            
+            // Show case study container
+            caseStudyContainer.style.display = 'block';
+            
+            // Show selected case study
+            document.getElementById(projectId).style.display = 'block';
+            
+            // Scroll to case study container
+            caseStudyContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    });
+    
+    // Add click event to close buttons
+    closeButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.stopPropagation();
+            caseStudyContainer.style.display = 'none';
+            
+            // Remove active class from all items
+            portfolioItems.forEach(i => i.classList.remove('active'));
+        });
+    });
+});
 </script>
   </body>
 </html>
