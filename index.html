@@ -343,12 +343,11 @@
         }
 
         .portfolio-grid {
-            display: flex;
-            justify-content: space-between;
-            gap: 1.5rem;
-            overflow-x: auto;
-            padding-bottom: 1rem;
-        }
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
 
         .portfolio-item {
             min-width: 300px;
@@ -369,11 +368,29 @@
             overflow: hidden;
         }
 
-        .portfolio-image img {
-            width: 100%;
-            height: auto;
-            object-fit: contain;
-        }
+        .portfolio-image {
+    width: 100%;
+    aspect-ratio: 4 / 3; /* keeps consistent height */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2a2a2a; /* fallback bg for transparent images */
+}
+
+.portfolio-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+.portfolio-image img {
+    transition: transform 0.3s ease;
+}
+.portfolio-item:hover .portfolio-image img {
+    transform: scale(1.05);
+}
+
 
         .portfolio-category {
             background-color: rgba(0, 0, 0, 0.6);
@@ -1245,26 +1262,26 @@ nav .logo,
     </section>
 
    
-    <!-- Portfolio Section -->
+    <!-- Portfolio Section image size recommended 1200 × 900 px (4:3 ratio) -->
 <section class="portfolio" id="portfolio">
     <h2 class="section-title">My Recent Work</h2>
     <div class="portfolio-grid">
-        <div class="portfolio-item" data-project="web-design">
+        <div class="portfolio-item" data-project="app-design">
             <div class="portfolio-image">
-                <img src="roshan_portfolio_images/Untitled design (1).jpg" alt="Web Design Project">
+                <img src="roshan_portfolio_images/vibely-image.png" alt="Web Design Project">
                 <div class="portfolio-category">Vibely – Event Finder App Design</div>
             </div>
         </div>
-        <div class="portfolio-item" data-project="ui-ux">
+        <div class="portfolio-item" data-project="ecommerce">
             <div class="portfolio-image">
-                <img src="roshan_portfolio_images/nzcoWtMnGUM (1).png" alt="UI/UX Design Project">
+                <img src="roshan_portfolio_images/Untitled design (13).png" alt="UI/UX Design Project">
                 <div class="portfolio-category">Elite Wears - Ecommerce Website Design</div>
             </div>
         </div>
-        <div class="portfolio-item" data-project="mockups">
+        <div class="portfolio-item" data-project="ui/ux + web development">
             <div class="portfolio-image">
-                <img src="roshan_portfolio_images/Screenshot 2025-03-23 233936.jpg" alt="Mockups Project">
-                <div class="portfolio-category">Mockups</div>
+                <img src="roshan_portfolio_images/web dev.png" alt="UI/UX + Web Development Project">
+                <div class="portfolio-category">UI/UX + Web Develpoment</div>
             </div>
         </div>
         <div class="portfolio-item" data-project="mockups">
@@ -1276,9 +1293,10 @@ nav .logo,
     </div>
     
     <!-- Expandable case study container -->
-    <div class="case-study-container">
+   
+     <div class="case-study-container">
        <!-- Web Design Case Study -->
-<div id="web-design" class="case-study">
+<div id="app-design" class="case-study">
     <div class="case-study-header">
         <h3>Vibely – Event Finder App</h3>
         <button class="close-case-study">&times;</button>
@@ -1286,134 +1304,101 @@ nav .logo,
     <div class="case-study-content">
         <div class="case-study-section">
             <h4>Project Overview</h4>
-            <p>Vibely is a mobile app concept that helps users effortlessly discover events happening around them—tailored to their vibe and interests. From concerts and workshops to casual meetups and creative gatherings, Vibely connects users to moments that matter nearby.
+            <p>Vibely is a mobile app concept that helps users effortlessly discover events happening around them—tailored to their vibe and interests. From concerts and workshops to casual meetups and creative gatherings, Vibely connects users to moments that matter nearby.<br><br>The app focuses on minimizing friction with a clean UI, intuitive navigation, and smart filtering like “Chill,” “Energetic,” or “Professional” vibes. Users can quickly save, share, or get reminders for events they love, all from one beautifully designed interface.
 
-            </p>
+            </p><br>
+            <P>For the full case study, click on "View Project Details" in the portfolio section above.</P>
             <!-- Added image -->
             <div class="case-study-image">
-                <img src="roshan_portfolio_images/Untitled design (1).jpg" alt="Web Design Overview">
+                <img src="roshan_portfolio_images/viibely home.png" alt="app design Overview">
                 <span class="image-caption">Home Screen</span>
             </div>
         </div>
-        <div class="case-study-section">
-            <h4>🔍 The Problem</h4>
-            <p>Despite a growing number of local events, many users struggle to find experiences that match their interests. Social media platforms feel overwhelming or unreliable for event discovery, and there’s no quick way to filter events based on mood, type, or proximity.</p>
-           
-        </div>
-        <div class="case-study-section">
-            <h4>💡 The Solution</h4>
-            <p>Vibely simplifies event discovery through a clean, engaging interface that filters events by location, category, and vibe (like Chill, Energetic, Artsy, Professional) and allows users to save, share, and get reminders for events as well as integrates real-time maps for easy navigation to event locations</p>
-            <!-- Added image -->
-            <div class="case-study-image">
-                <img src="roshan_portfolio_images/Untitled design (2).jpg" alt="Solution Implementation">
-                <span class="image-caption">Event Details Screen</span>
-            </div>
-        </div>
-        <div class="case-study-section">
-            <h4>🧪 Research & Insights</h4>
-            <p>Through surveys and user interviews, I found that most people want quick access to events without digging through Facebook or random flyers. Users preferred a mobile app with visual previews and the ability to save or share events instantly.
-
-            </p>
-            <!-- Added image -->
-            <div class="case-study-image">
-                <img src="roshan_portfolio_images/Untitled design (4).jpg" alt="Solution Implementation">
-                <span class="image-caption">Get Ticket</span>
-            </div>
-        </div>
-        <div class="case-study-section">
-            <h4>💳 Payment Methods
-            </h4>
-            <p>To make ticket purchases easy and locally accessible, Vibely integrates popular Nepali payment options like eSewa, Khalti, and IME Pay. These gateways allow users to instantly book paid events using mobile wallets they already trust and use daily. The checkout flow is kept minimal and smooth to ensure a fast and secure payment experience.
-
-            </p>
-            <!-- Added image -->
-            <div class="case-study-image">
-                <img src="roshan_portfolio_images/Untitled design (5).jpg" alt="Solution Implementation">
-                <span class="image-caption">Payment Method</span>
-            </div>
-        </div>
-        <div class="case-study-section">
-            <h4>🎟️ Digital Tickets & QR Code Entry
-
-            </h4>
-            <p>After a successful payment, Vibely generates a digital ticket with a unique QR code that users can access anytime from their profile or event page. This QR code can be scanned at the event entrance for quick and contactless check-in. It not only speeds up entry but also reduces the need for physical tickets, making the process eco-friendly and efficient.
-
-            </p>
-            <!-- Added image -->
-            <div class="case-study-image">
-                <img src="roshan_portfolio_images/Untitled design (3).jpg" alt="Solution Implementation">
-                <span class="image-caption">Payment Method</span>
-            </div>
-        </div>
-        <div class="case-study-section">
-            <h4>🚀 Outcome
-
-
-            </h4>
-            <p>Testers loved the simplicity and customization. The vibe filters made the experience fun and more personal. It received positive feedback for both functionality and design clarity.
-
-            </p>
-            
-        </div>
+       
+        
         <div class="case-study-section">
             <h4>Tools Used</h4>
             <div class="tech-stack">
                 
                 <span class="tech-tag">Figma</span>
+                <span class="tech-tag">Adobe Illustrator</span>
+                <span class="tech-tag">Canva</span>
             </div>
         </div>
     </div>
-</div>
-        
-        <!-- UI/UX Case Study -->
-        <div id="ui-ux" class="case-study">
+</div> 
+
+
+        <!-- ecommerce Case Study -->
+        <div id="ecommerce" class="case-study">
             <div class="case-study-header">
-                <h3>UI/UX Design Project</h3>
+                <h3>Elite Wears – Fashion Ecommerce Website</h3>
                 <button class="close-case-study">&times;</button>
             </div>
             <div class="case-study-content">
                 <div class="case-study-section">
-                    <h4>Overview</h4>
-                    <p>Designed a user-friendly mobile application that simplifies the user experience.</p>
+                    <h4>Project Overview</h4>
+                    <p>Elite Wears is a modern ecommerce website designed for a rising fashion brand aiming to provide a seamless online shopping experience. The goal was to create a clean, responsive, and conversion-focused interface that highlights their collections while making browsing and purchasing effortless for users.
+<br><br>
+                        The website features an intuitive layout, minimalist product grids, smooth filtering, and engaging visuals to reflect the brand’s premium identity. From homepage banners to detailed product pages and a simplified checkout flow, every element was crafted to reduce friction and boost user confidence during the shopping journey.
+                        <br><br>
+                        For the full case study, click on "View Project Details" in the portfolio section above.</p>
+                    <div class="case-study-image">
+                        <img src="roshan_portfolio_images/Untitled design (12).png" alt="ecommerce Overview">
+                        <span class="image-caption">Home Screen</span>
+                    </div>
                 </div>
+               
+                
                 <div class="case-study-section">
-                    <h4>Challenge</h4>
-                    <p>The client needed to compete with modern applications while addressing usability concerns.</p>
-                </div>
-                <div class="case-study-section">
-                    <h4>Process</h4>
-                    <p>Conducted user research, created wireframes, and developed interactive prototypes.</p>
-                </div>
-                <div class="case-study-section">
-                    <h4>Results</h4>
-                    <p>The redesign improved user engagement by 45% and received positive feedback in usability tests.</p>
+                    <h4>Tools Used</h4>
+                    <div class="tech-stack">
+                        
+                        <span class="tech-tag">Figma</span>
+                        <span class="tech-tag">Adobe Illustrator</span>
+                        <span class="tech-tag">Canva</span>
+                    </div>
                 </div>
             </div>
-        </div>
-        
-        <!-- Mockups Case Study -->
-        <div id="mockups" class="case-study">
+        </div> 
+        <!-- ui/ux + web development Case Study -->
+        <div id="ui/ux + web development" class="case-study">
             <div class="case-study-header">
-                <h3>Product Mockups</h3>
+                <h3>UI/UX + Web Development - Taste of Thai Restaurant</h3>
                 <button class="close-case-study">&times;</button>
             </div>
             <div class="case-study-content">
                 <div class="case-study-section">
-                    <h4>Overview</h4>
-                    <p>Created realistic product mockups for a client's marketing campaign.</p>
+                    <h4>Project Overview</h4>
+                    <p>Taste of Thai is a modern restaurant website crafted to deliver an inviting and seamless digital experience for both dine-in and delivery customers. The goal was to reflect the brand’s authentic Thai identity while ensuring the interface remained intuitive, responsive, and conversion-focused.
+<br><br>
+                        The project involved end-to-end UI/UX design — from wireframing and content strategy to visual design and responsive development. Key features include a dynamic food menu, location-aware contact and reservation options, mobile optimization, and clean navigation that enhances usability across devices.
+                        <br><br>
+                        The site is fully coded and deployed, blending design precision with performance. It's a digital space that mirrors the warmth and richness of the dining experience itself.
+                        
+                        <br><br>
+                        For the full case study, click on "View Project Details" in the portfolio section above.</p>
+                    <div class="case-study-image">
+                        <img src="roshan_portfolio_images/web dev.png" alt="ecommerce Overview">
+                        <span class="image-caption">Home Screen</span>
+                    </div>
                 </div>
+               
+                
                 <div class="case-study-section">
-                    <h4>Approach</h4>
-                    <p>Used advanced 3D modeling and rendering techniques to showcase the product from multiple angles.</p>
-                </div>
-                <div class="case-study-section">
-                    <h4>Impact</h4>
-                    <p>The mockups helped increase pre-order sales by 35% and were featured in digital marketing campaigns.</p>
+                    <h4>Tools Used</h4>
+                    <div class="tech-stack">
+                        
+                        <span class="tech-tag">Figma</span>
+                        <span class="tech-tag">Adobe Photoshop</span>
+                        <span class="tech-tag">Canva</span>
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">Javascript</span>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
+        </div> 
 
     <!-- Contact Section -->
     <section class="contact" id="contact">
@@ -1691,6 +1676,63 @@ document.addEventListener('DOMContentLoaded', function() {
             if (index === 1) {
                 // Open Behance case study in a new tab
                 window.open('https://www.behance.net/gallery/224686459/E-commerce-website-Design-Elite-Wears', '_blank');
+                return; // Don't execute the rest of the function
+            }
+            
+            // For other portfolio items, use the original functionality
+            // Remove active class from all items
+            portfolioItems.forEach(i => i.classList.remove('active'));
+            
+            // Add active class to clicked item
+            this.classList.add('active');
+            
+            // Get project ID
+            const projectId = this.getAttribute('data-project');
+            
+            // Hide all case studies
+            caseStudies.forEach(study => {
+                study.style.display = 'none';
+            });
+            
+            // Show case study container
+            caseStudyContainer.style.display = 'block';
+            
+            // Show selected case study
+            document.getElementById(projectId).style.display = 'block';
+            
+            // Scroll to case study container
+            caseStudyContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    });
+    
+    // Add click event to close buttons
+    closeButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.stopPropagation();
+            caseStudyContainer.style.display = 'none';
+            
+            // Remove active class from all items
+            portfolioItems.forEach(i => i.classList.remove('active'));
+        });
+    });
+});
+</script>
+<script>
+    // Add this to the existing script at the bottom of your HTML file
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all portfolio items
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+    const caseStudyContainer = document.querySelector('.case-study-container');
+    const caseStudies = document.querySelectorAll('.case-study');
+    const closeButtons = document.querySelectorAll('.close-case-study');
+    
+    // Add click event to portfolio items
+    portfolioItems.forEach((item, index) => {
+        item.addEventListener('click', function() {
+            // Check if it's the third portfolio item
+            if (index === 2) {
+                // Open Behance case study in a new tab
+                window.open('https://www.behance.net/gallery/224815389/Modern-Restaurant-Website-Design-UX-Case-Study', '_blank');
                 return; // Don't execute the rest of the function
             }
             
