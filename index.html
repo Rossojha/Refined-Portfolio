@@ -159,7 +159,7 @@
             color: var(--bg-color);
         }
 
-        .hero-image {
+       /* .hero-image {
             position: absolute;
             right: 20%;
             top: 50%;
@@ -167,7 +167,21 @@
             width: 20%;
             z-index: 1;
             border-radius: 3%;
-        }
+        }  */
+        .hero-image {
+    position: absolute;
+    right: 20%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20%; /* You can adjust as needed */
+    aspect-ratio: 1 / 1; /* Ensures it's perfectly square */
+    object-fit: cover;
+    border-radius: 50%; /* This makes it circular */
+    border: 4px solid #ffffff; /* Optional: light purple border */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); /* Adds depth */
+    z-index: 1;
+}
+
 
         /* About Section */
         .about {
@@ -1159,7 +1173,7 @@ nav .logo,
 
             </div>
         </div>
-        <img src="roshan_portfolio_images/Adobe-design-removebg-preview.png" alt="Creative Design Illustration" class="hero-image">
+        <img src="roshan_portfolio_images/profile 1.png" alt="Creative Design Illustration" class="hero-image">
     </section>
 
     <!-- About Section -->
@@ -1399,7 +1413,7 @@ nav .logo,
                 </div>
             </div>
         </div> 
-
+</div>
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="contact-container">
