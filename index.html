@@ -353,7 +353,7 @@
             background-color: var(--card-ui-ux);
             color: #333;
         }
-
+      
         /* Portfolio Section */
         .portfolio {
             padding: 6rem 6%;
@@ -1170,6 +1170,36 @@ nav .logo,
   color: #ffffff !important;
 }
 
+.recent-work-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.recent-work-grid .work-item {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  background-color: #1f1f1f;
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.recent-work-grid .work-item img {
+  width: 100%;
+  height: 250px; /* Fixed height */
+  object-fit: cover; /* Crops nicely */
+  border-radius: 10px;
+}
+
+.recent-work-grid .work-item p {
+  margin-top: 1rem;
+  text-align: center;
+  font-weight: 500;
+  color: white;
+}
+
   </style>
 </head>
 <body>
@@ -1312,6 +1342,7 @@ nav .logo,
                     </p>
             </div>
         </div>
+       
     </section>
 
    
@@ -1339,7 +1370,14 @@ nav .logo,
         </div>
         
     </div>
+    <div class="portfolio-item" data-project="ads-optimization">
+        <div class="portfolio-image">
+            <img src="roshan_portfolio_images/social media ads.png" alt="UI/UX + Web Development Project">
+            <div class="portfolio-category">Ads Optimization</div>
+        </div>
+    </div>
     
+</div>
     <!-- Expandable case study container -->
    
      <div class="case-study-container">
@@ -1789,6 +1827,63 @@ document.addEventListener('DOMContentLoaded', function() {
             if (index === 2) {
                 // Open Behance case study in a new tab
                 window.open('https://www.behance.net/gallery/224815389/Modern-Restaurant-Website-Design-UX-Case-Study', '_blank');
+                return; // Don't execute the rest of the function
+            }
+            
+            // For other portfolio items, use the original functionality
+            // Remove active class from all items
+            portfolioItems.forEach(i => i.classList.remove('active'));
+            
+            // Add active class to clicked item
+            this.classList.add('active');
+            
+            // Get project ID
+            const projectId = this.getAttribute('data-project');
+            
+            // Hide all case studies
+            caseStudies.forEach(study => {
+                study.style.display = 'none';
+            });
+            
+            // Show case study container
+            caseStudyContainer.style.display = 'block';
+            
+            // Show selected case study
+            document.getElementById(projectId).style.display = 'block';
+            
+            // Scroll to case study container
+            caseStudyContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    });
+    
+    // Add click event to close buttons
+    closeButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.stopPropagation();
+            caseStudyContainer.style.display = 'none';
+            
+            // Remove active class from all items
+            portfolioItems.forEach(i => i.classList.remove('active'));
+        });
+    });
+});
+</script>
+<script>
+    // Add this to the existing script at the bottom of your HTML file
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all portfolio items
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+    const caseStudyContainer = document.querySelector('.case-study-container');
+    const caseStudies = document.querySelectorAll('.case-study');
+    const closeButtons = document.querySelectorAll('.close-case-study');
+    
+    // Add click event to portfolio items
+    portfolioItems.forEach((item, index) => {
+        item.addEventListener('click', function() {
+            // Check if it's the fourth portfolio item
+            if (index === 3) {
+                // Open Behance case study in a new tab
+                window.open('https://www.behance.net/gallery/225023791/Social-Media-Ads-Optimization-Success-20M-Views', '_blank');
                 return; // Don't execute the rest of the function
             }
             
