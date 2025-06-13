@@ -1382,6 +1382,12 @@ nav .logo,
             <div class="portfolio-category">Blockchain based Voting System</div>
         </div>
     </div>
+    <div class="portfolio-item" data-project="graphic-designs">
+        <div class="portfolio-image">
+            <img src="roshan_portfolio_images/graphic-design-500x500.webp" alt="Voting System">
+            <div class="portfolio-category">Graphic Designs</div>
+        </div>
+    </div>
 </div>
     <!-- Expandable case study container -->
    
@@ -1669,7 +1675,7 @@ nav .logo,
 
 <script>
    document.getElementById('downloadCV').addEventListener('click', function() {
-  window.open('roshan_resume.pdf', '_blank');
+  window.open('chrome-extension://oemmndcbldboiebfnladdacbdfmadadm/file:///C:/Users/USER/Desktop/PROJECTS/Refined-Portfolio/roshan%20ojha%20resume%20(1).pdf', '_blank');
 });
 
   </script>
@@ -1946,6 +1952,63 @@ document.addEventListener('DOMContentLoaded', function() {
             if (index === 4) {
                 // Open Behance case study in a new tab
                 window.open('https://evotingchain.netlify.app/', '_blank');
+                return; // Don't execute the rest of the function
+            }
+            
+            // For other portfolio items, use the original functionality
+            // Remove active class from all items
+            portfolioItems.forEach(i => i.classList.remove('active'));
+            
+            // Add active class to clicked item
+            this.classList.add('active');
+            
+            // Get project ID
+            const projectId = this.getAttribute('data-project');
+            
+            // Hide all case studies
+            caseStudies.forEach(study => {
+                study.style.display = 'none';
+            });
+            
+            // Show case study container
+            caseStudyContainer.style.display = 'block';
+            
+            // Show selected case study
+            document.getElementById(projectId).style.display = 'block';
+            
+            // Scroll to case study container
+            caseStudyContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    });
+    
+    // Add click event to close buttons
+    closeButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.stopPropagation();
+            caseStudyContainer.style.display = 'none';
+            
+            // Remove active class from all items
+            portfolioItems.forEach(i => i.classList.remove('active'));
+        });
+    });
+});
+</script>
+<script>
+    // Add this to the existing script at the bottom of your HTML file
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all portfolio items
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+    const caseStudyContainer = document.querySelector('.case-study-container');
+    const caseStudies = document.querySelectorAll('.case-study');
+    const closeButtons = document.querySelectorAll('.close-case-study');
+    
+    // Add click event to portfolio items
+    portfolioItems.forEach((item, index) => {
+        item.addEventListener('click', function() {
+            // Check if it's the fifth portfolio item
+            if (index === 5) {
+                // Open Behance case study in a new tab
+                window.open('chrome-extension://oemmndcbldboiebfnladdacbdfmadadm/file:///C:/Users/USER/Desktop/PROJECTS/Refined-Portfolio/roshan%20graphic%20designs.pdf', '_blank');
                 return; // Don't execute the rest of the function
             }
             
